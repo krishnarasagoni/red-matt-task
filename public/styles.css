@@ -1,163 +1,216 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f48506;
-    color: #333;
-    transition: background-color 0.3s, color 0.3s;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Popines" sans-serif;
 }
-
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(132deg, #153677, #4e085f);
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
 .container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    text-align: center; /* Center the heading */
+  text-align: center;
 }
 
 .completed {
-    text-decoration: line-through;
-    color: gray;
+  text-decoration: line-through;
+  color: gray;
 }
 
 #taskInput {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd; /* Add border */
-    border-radius: 4px; /* Rounded corners */
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px; 
 }
-
 button {
-    padding: 10px;
-    margin-right: 5px;
-    border: none; /* Remove default border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    background-color: #ccc; 
-    /* Button color */
-    color: white; /* Button text color */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  padding: 10px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #8d18b4;
+  color: white;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #ccc; 
-    
+  background-color: #b817d8;
+  color: #000;
 }
 
 ul {
-    list-style-type: none; /* Remove default list styles */
-    padding: 0;
+  list-style-type: none; 
+  padding: 0;
 }
 
 li {
-    display: flex;
-    justify-content: space-between; /* Space between items and buttons */
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ddd; /* Bottom border for list items */
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd; 
 }
 
 li button {
-    margin-left: 5px; /* Space between buttons */
+  margin-left: 5px; 
 }
 
-/* Switch styles for dark mode toggle */
+
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
 .switch input {
-    opacity: 0; /* Hide default checkbox */
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider {
-    position: absolute;
-    cursor: pointer; 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc; 
-    transition: .4s; 
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
 }
 
 .slider::before {
-   position: absolute;
-   content: "";
-   height: 26px;
-   width: 26px;
-   left: 4px;
-   bottom: 4px;
-   background-color: white; 
-   transition: .4s; 
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  left: 100px;
+  width: 60px; 
+  height: 34px; 
 }
 
-input[type=checkbox]:checked + .slider {
-   background-color: #2196F3; 
+.switch input {
+  opacity: 0; 
+  width: 0;
+  height: 0;
 }
 
-input[type=checkbox]:checked + .slider::before {
-   transform: translateX(26px); 
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  background-color: #ccc; 
+  transition: 0.4s; 
+  border-radius: 34px; 
 }
 
-/* Dark Mode Styles */
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px; 
+  width: 26px; 
+  left: 4px; 
+  bottom: 3px; 
+  background-color: white; 
+  transition: 0.4s; 
+  border-radius: 50%; 
+}
+
+
+input[type="checkbox"]:checked + .slider {
+  background-color: #cd21f3; 
+}
+
+
+input[type="checkbox"]:checked + .slider::before {
+  transform: translateX(26px); 
+}
+
+
+body.dark-mode .switch .slider {
+  background-color: #555; 
+}
+
+body.dark-mode input[type="checkbox"]:checked + .slider {
+  background-color: #cd21f3; 
+}
+
+
 body.dark-mode {
-   background-color: #333; 
-   color: white; 
+  background-color: #333;
+  color: white;
 }
 
 body.dark-mode .container {
-   background-color: #444; 
+  background-color: #444;
 }
 
-/* Media Queries for Responsive Design */
 
-/* For tablets and larger phones (min-width of 600px) */
 @media (max-width: 600px) {
-   .container {
-       margin-top: 20px; /* Reduce top margin on smaller screens */
-       padding-left: 10px; /* Add some padding to the left and right */
-       padding-right: 10px; 
-   }
+  .container {
+    margin-top: 20px; 
+    padding-left: 10px; 
+    padding-right: 10px;
+  }
 
-   #taskInput {
-       width: calc(100% - 20px); /* Adjust width slightly for smaller screens */
-   }
+  #taskInput {
+    width: calc(100% - 20px); 
+  }
 
-   button {
-       width: calc(50% - 5px); /* Make buttons take up half the width on smaller screens */
-       margin-bottom: 5px; /* Add some space below buttons */
-   }
+  button {
+    width: calc(
+      50% - 5px
+    ); 
+    margin-bottom: 5px; 
+  }
 }
 
-/* For mobile devices (max-width of 400px) */
+
 @media (max-width: 400px) {
-   h1 {
-       font-size: 1.5em; /* Reduce heading size for mobile devices */
-   }
+  h1 {
+    font-size: 1.5em; 
+  }
 
-   button {
-       font-size: small; /* Smaller font size for buttons on mobile devices */
-       padding-left :5px ; /* Adjust padding for buttons on mobile devices*/
-       padding-right :5px ;
-   }
+  button {
+    font-size: small; 
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 
-   li {
-       flex-direction : column ; /* Stack items vertically on smaller screens*/
-       align-items : flex-start ; /* Align items to the start*/
-   }
+  li {
+    flex-direction: column; 
+    align-items: flex-start; 
+  }
 
-   li button {
-       width :100%; /* Make buttons full width in list items*/
-       margin-top :5px ; /* Add some space above buttons*/
-   }
+  li button {
+    width: 100%; 
+    margin-top: 5px; 
+  }
 }
