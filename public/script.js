@@ -6,7 +6,6 @@ const modeToggle = document.getElementById('modeToggle');
 
 let currentEditTaskId = null;
 
-
 window.onload = async () => {
     await loadTasks();
     modeToggle.checked = localStorage.getItem('darkMode') === 'true';
