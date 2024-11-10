@@ -1,14 +1,3 @@
 {
-  "users": [
-    {
-      "id": 1730860744333,
-      "text": "redmatters",
-      "completed": false
-    },
-    {
-      "id": 1730860769581,
-      "text": "krishna rasa",
-      "completed": true
-    }
-  ]
+  "users": []
 }
